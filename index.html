@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScriptKit - JavaScriptKit</title>
+    <link rel="stylesheet" type="text/css" href="/JavaScriptKit/all.css" media="all" />
+</head>
+<body>
+    <header>
+        <a href="/JavaScriptKit">
+            <strong>
+                JavaScriptKit
+            </strong>
+            <span>Documentation</span>
+        </a>
+        <sup>Beta</sup>
+    </header>
+
+    <!--
+    <form class="search">
+        <input type="search" placeholder="Search" />
+    </form>
+    -->
+
+    <nav>
+        <div class="wrapper">
+            <h2>On This Page</h2>
+            <ol><li><a href="#classes">Classes</a></li><li><a href="#enumerations">Enumerations</a></li><li><a href="#protocols">Protocols</a></li><li><a href="#typealiases">Typealiases</a></li><li><a href="#functions">Functions</a></li></ol>
+        </div>
+    </nav>
+
+    <main>
+        <article>
+                <section id="classes">
+        <h2>Classes</h2>
+        <dl>
+            <dt class="class">
+    <a href="/JavaScriptKit/JSArray" title="class - JSArray">
+        JSArray
+    </a>
+</dt>
+<dd>
+    
+</dd>
+<dt class="class">
+    <a href="/JavaScriptKit/JSArray_Iterator" title="class - JSArray.Iterator">
+        JSArray.​Iterator
+    </a>
+</dt>
+<dd>
+    
+</dd>
+<dt class="class">
+    <a href="/JavaScriptKit/JSDate" title="class - JSDate">
+        JSDate
+    </a>
+</dt>
+<dd>
+    <p>A wrapper around the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error">JavaScript Date
+class</a> that
+exposes its properties in a type-safe way. This doesn't 100% match the JS API, for example
+<code>getMonth</code>/<code>setMonth</code> etc accessor methods are converted to properties, but the rest of it matches
+in the naming. Parts of the JavaScript <code>Date</code> API that are not consistent across browsers and JS
+implementations are not exposed in a type-safe manner, you should access the underlying <code>jsObject</code>
+property if you need those.</p>
+
+</dd>
+<dt class="class">
+    <a href="/JavaScriptKit/JSError" title="class - JSError">
+        JSError
+    </a>
+</dt>
+<dd>
+    <p>A wrapper around <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error">the JavaScript Error
+class</a> that
+exposes its properties in a type-safe way.</p>
+
+</dd>
+<dt class="class">
+    <a href="/JavaScriptKit/JSTimer" title="class - JSTimer">
+        JSTimer
+    </a>
+</dt>
+<dd>
+    <p>This timer is an abstraction over <a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval"><code>setInterval</code></a>
+/ <a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/clearInterval"><code>clearInterval</code></a> and
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout"><code>setTimeout</code></a>
+/ <a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout"><code>clearTimeout</code></a>
+JavaScript functions. It intentionally doesn't match the JavaScript API, as a special care is
+needed to hold a reference to the timer closure and to call <code>JSClosure.release()</code> on it when the
+timer is deallocated. As a user, you have to hold a reference to a <code>JSTimer</code> instance for it to stay
+valid. The <code>JSTimer</code> API is also intentionally trivial, the timer is started right away, and the
+only way to invalidate the timer is to bring the reference count of the <code>JSTimer</code> instance to zero.
+For invalidation you should either store the timer in an optional property and assign <code>nil</code> to it,
+or deallocate the object that owns the timer.</p>
+
+</dd>
+<dt class="class">
+    <a href="/JavaScriptKit/JSTypedArray" title="class - JSTypedArray">
+        JSTyped​Array
+    </a>
+</dt>
+<dd>
+    
+</dd>
+<dt class="class">
+    <a href="/JavaScriptKit/JSFunction" title="class - JSFunction">
+        JSFunction
+    </a>
+</dt>
+<dd>
+    
+</dd>
+<dt class="class">
+    <a href="/JavaScriptKit/JSClosure" title="class - JSClosure">
+        JSClosure
+    </a>
+</dt>
+<dd>
+    
+</dd>
+<dt class="class">
+    <a href="/JavaScriptKit/JSObject" title="class - JSObject">
+        JSObject
+    </a>
+</dt>
+<dd>
+    
+</dd>
+<dt class="class">
+    <a href="/JavaScriptKit/JSValueDecoder" title="class - JSValueDecoder">
+        JSValue​Decoder
+    </a>
+</dt>
+<dd>
+    
+</dd>
+        </dl>
+    </section>
+    <section id="enumerations">
+        <h2>Enumerations</h2>
+        <dl>
+            <dt class="enumeration">
+    <a href="/JavaScriptKit/JSValue" title="enumeration - JSValue">
+        JSValue
+    </a>
+</dt>
+<dd>
+    
+</dd>
+        </dl>
+    </section>
+    <section id="protocols">
+        <h2>Protocols</h2>
+        <dl>
+            <dt class="protocol">
+    <a href="/JavaScriptKit/TypedArrayElement" title="protocol - TypedArrayElement">
+        Typed​Array​Element
+    </a>
+</dt>
+<dd>
+    
+</dd>
+<dt class="protocol">
+    <a href="/JavaScriptKit/JSValueConstructible" title="protocol - JSValueConstructible">
+        JSValue​Constructible
+    </a>
+</dt>
+<dd>
+    
+</dd>
+<dt class="protocol">
+    <a href="/JavaScriptKit/JSValueConvertible" title="protocol - JSValueConvertible">
+        JSValue​Convertible
+    </a>
+</dt>
+<dd>
+    
+</dd>
+        </dl>
+    </section>
+    <section id="typealiases">
+        <h2>Typealiases</h2>
+        <dl>
+            <dt class="typealias">
+    <a href="/JavaScriptKit/JSObjectRef" title="typealias - JSObjectRef">
+        JSObject​Ref
+    </a>
+</dt>
+<dd>
+    
+</dd>
+<dt class="typealias">
+    <a href="/JavaScriptKit/JSArrayRef" title="typealias - JSArrayRef">
+        JSArray​Ref
+    </a>
+</dt>
+<dd>
+    
+</dd>
+<dt class="typealias">
+    <a href="/JavaScriptKit/JSFunctionRef" title="typealias - JSFunctionRef">
+        JSFunction​Ref
+    </a>
+</dt>
+<dd>
+    
+</dd>
+        </dl>
+    </section>
+    <section id="functions">
+        <h2>Functions</h2>
+        <dl>
+            <dt class="function">
+    <a href="/JavaScriptKit/getJSValue(this:name:)" title="function - getJSValue(this:name:)">
+        get​JSValue(this:​name:​)
+    </a>
+</dt>
+<dd>
+    
+</dd>
+<dt class="function">
+    <a href="/JavaScriptKit/setJSValue(this:name:value:)" title="function - setJSValue(this:name:value:)">
+        set​JSValue(this:​name:​value:​)
+    </a>
+</dt>
+<dd>
+    
+</dd>
+<dt class="function">
+    <a href="/JavaScriptKit/getJSValue(this:index:)" title="function - getJSValue(this:index:)">
+        get​JSValue(this:​index:​)
+    </a>
+</dt>
+<dd>
+    
+</dd>
+<dt class="function">
+    <a href="/JavaScriptKit/setJSValue(this:index:value:)" title="function - setJSValue(this:index:value:)">
+        set​JSValue(this:​index:​value:​)
+    </a>
+</dt>
+<dd>
+    
+</dd>
+        </dl>
+    </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>
+    Generated on <time datetime="2020-09-15T13:22:17+0000">September 15, 2020</time> using <a href="https://github.com/SwiftDocOrg/swift-doc">swift-doc</a> <span class="version">1.0.0-beta.4</span>.
+</p>
+    </footer>
+</body>
+</html>
